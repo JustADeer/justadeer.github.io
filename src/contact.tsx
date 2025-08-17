@@ -39,7 +39,7 @@ function Contact({ onClose }: ContactProps) {
             use social media much, so this is the best way of contacting me{" "}
           </div>
           <img
-            src="src\assets\thicc.png"
+            src="\images\thicc.png"
             className="w-48 align-middle flex my-12 self-center drop-shadow-lg hover:scale-105 transition-transform duration-250 ease-in-out"
           ></img>
           <div>
