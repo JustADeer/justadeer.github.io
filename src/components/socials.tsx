@@ -5,7 +5,7 @@ interface AboutProps {
 }
 
 function Socials({
-  imgSrc = "src/assets/thicc/png",
+  imgSrc = "/images/thicc/png",
   titleText = "untitled",
   link = "",
 }: AboutProps) {

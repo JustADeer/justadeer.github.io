@@ -31,7 +31,7 @@ function About({ onClose }: AboutProps) {
         <div className="flex static items-center self-start ml-24">
           <div className="bg-amber-200 rounded-full w-38 h-38 border-2">
             <img
-              src="src/assets/Character.png"
+              src="/images/Character.png"
               className="object-contain"
               draggable={false}
             ></img>

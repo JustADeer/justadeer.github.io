@@ -5,7 +5,7 @@ function Mainwel() {
   return (
     <div
       className="align-middle flex h-screen w-screen flex-col items-center justify-center 
-    bg-[url('src/assets/bg.jpeg')] bg-auto bg-center bg-repeat text-slate-900 
+    bg-[url('/images/bg.jpeg')] bg-auto bg-center bg-repeat text-slate-900 
     animate-[bg-scroll_10s_linear_infinite]"
       style={{
         backgroundPosition: "center",

@@ -27,17 +27,17 @@ function Portfolio({ onClose }: PortfolioProps) {
         <div className="grid grid-cols-3 mt-8 items-center gap-8 self-center">
           <Socials
             link="https://justadeer.itch.io/"
-            imgSrc="src/assets/itch.webp"
+            imgSrc="/images/itch.webp"
             titleText="Itch.io"
           />
           <Socials
             link="https://github.com/JustADeer"
-            imgSrc="src/assets/github.webp"
+            imgSrc="/images/github.webp"
             titleText="Github"
           />
           <Socials
             link="https://www.youtube.com/@justadeer"
-            imgSrc="src/assets/youtube.webp"
+            imgSrc="/images/youtube.webp"
             titleText="Youtube"
           />
         </div>

@@ -55,7 +55,7 @@ function MainButtons() {
         onClick={() => handleToggle("about")}
       >
         <img
-          src="src/assets/about.png"
+          src="/images/about.png"
           className={imageBaseClasses}
           draggable="false"
         />
@@ -68,7 +68,7 @@ function MainButtons() {
         onClick={() => handleToggle("portfolio")}
       >
         <img
-          src="src/assets/portfolio.png"
+          src="/images/portfolio.png"
           className={imageBaseClasses}
           draggable="false"
         ></img>
@@ -81,7 +81,7 @@ function MainButtons() {
         onClick={() => handleToggle("faq")}
       >
         <img
-          src="src/assets/faq.png"
+          src="/images/faq.png"
           className={imageBaseClasses}
           draggable="false"
         ></img>
@@ -94,7 +94,7 @@ function MainButtons() {
         onClick={() => handleToggle("contact")}
       >
         <img
-          src="src/assets/email.png"
+          src="/images/email.png"
           className={imageBaseClasses}
           draggable="false"
         ></img>
