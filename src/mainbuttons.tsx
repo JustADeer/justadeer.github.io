@@ -41,6 +41,8 @@ function MainButtons() {
   `;
 
   const imageBaseClasses = `
+  w-14
+  h-14
   max-w-14
   max-h-14
   mb-1
@@ -55,9 +57,12 @@ function MainButtons() {
         onClick={() => handleToggle("about")}
       >
         <img
-          src="/images/about.png"
+          src="/images/about.webp"
           className={imageBaseClasses}
           draggable="false"
+          alt="about"
+          loading="lazy"
+          fetchPriority="high"
         />
         About
       </button>
@@ -68,9 +73,12 @@ function MainButtons() {
         onClick={() => handleToggle("portfolio")}
       >
         <img
-          src="/images/portfolio.png"
+          src="/images/portfolio.webp"
           className={imageBaseClasses}
           draggable="false"
+          alt="portfolio"
+          loading="lazy"
+          fetchPriority="high"
         ></img>
         Portfolio
       </button>
@@ -81,9 +89,12 @@ function MainButtons() {
         onClick={() => handleToggle("faq")}
       >
         <img
-          src="/images/faq.png"
+          src="/images/faq.webp"
           className={imageBaseClasses}
           draggable="false"
+          alt="faq"
+          loading="lazy"
+          fetchPriority="high"
         ></img>
         FAQ
       </button>
@@ -94,9 +105,12 @@ function MainButtons() {
         onClick={() => handleToggle("contact")}
       >
         <img
-          src="/images/email.png"
+          src="/images/email.webp"
           className={imageBaseClasses}
           draggable="false"
+          alt="email"
+          loading="lazy"
+          fetchPriority="high"
         ></img>
         Contact
       </button>

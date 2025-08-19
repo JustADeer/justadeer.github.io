@@ -14,13 +14,13 @@ function Faq({ onClose }: FaqProps) {
   return (
     <Draggable
       nodeRef={nodeRef as React.RefObject<HTMLElement>}
-      handle=".drag-hande"
+      handle=".drag-handle"
       defaultPosition={{ x: x, y: y }}
       defaultClassName="fixed inset-0 z-1"
     >
       <div
         ref={nodeRef}
-        className="drag-hande w-176 h-108 bg-white flex flex-col items-start justify-center rounded-lg drop-shadow-lg"
+        className="w-176 h-108 bg-white flex flex-col items-start justify-center rounded-lg drop-shadow-lg"
       >
         <Header onClose={onClose} titleText="faq" />
 

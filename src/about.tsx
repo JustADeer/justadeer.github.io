@@ -14,13 +14,13 @@ function About({ onClose }: AboutProps) {
   return (
     <Draggable
       nodeRef={nodeRef as React.RefObject<HTMLElement>}
-      handle=".drag-hande"
+      handle=".drag-handle"
       defaultPosition={{ x: x, y: y }}
       defaultClassName="fixed inset-0 z-1"
     >
       <div
         ref={nodeRef}
-        className="drag-hande w-192 h-128 bg-white flex flex-col items-start justify-center rounded-lg drop-shadow-lg"
+        className="w-192 h-128 bg-white flex flex-col items-start justify-center rounded-lg drop-shadow-lg"
       >
         <Header onClose={onClose} titleText="about" />
 
@@ -31,10 +31,14 @@ function About({ onClose }: AboutProps) {
         <div className="flex static items-center self-start ml-24">
           <div className="bg-amber-200 rounded-full w-38 h-38 border-2">
             <img
-              src="/images/Character.png"
-              className="object-contain"
+              src="/videos/pfp.gif"
+              className="object-contain w-full h-full rounded-full"
               draggable={false}
-            ></img>
+              alt="Profile"
+              rel="preload"
+              loading="lazy"
+              fetchPriority="high"
+            />
           </div>
           <span className="ml-10 text-blue-300 text-5xl">
             Souzan Shaquille
@@ -57,13 +61,17 @@ function About({ onClose }: AboutProps) {
               <br></br>・ Web Development
             </p>
             <div className="font-extrabold text-3xl mb-4">Other Interest</div>
-            <p className="mb-10">
-              Right now I am learning more about AI and ML and how to coorporate
+            <p className="mb-10 text-justify">
+              Right now I am learning more about AI and ML and how to corporate
               other languages like Rust and other low level languages into my
-              game development workflow.
+              development workflow. Also researching on how the industry
+              standards on how projects are made and maintained.
               <br />
-              <br />I also researching on how the industry standards on how
-              projects are made and maintained.
+              <br />I am also interested in learning new languages. I currently
+              learning Japanese. Trying to get to{" "}
+              <span className="text-red-500">N4</span> level of fluency. After I
+              reach that level I will try to learn Korean and Chinese.
+              <br />
             </p>
           </div>
         </div>

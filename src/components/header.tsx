@@ -5,7 +5,7 @@ interface AboutProps {
 
 function Header({ onClose, titleText = "untitled" }: AboutProps) {
   return (
-    <div className="absolute top-0 w-full bg-gray-700 rounded-t-lg flex items-center justify-between px-2">
+    <div className="drag-handle absolute top-0 w-full bg-gray-700 rounded-t-lg flex items-center justify-between px-2">
       <span className=" text-white text-2xl">{titleText}</span>
       <button
         className="cursor-pointer flex items-center mb-1"

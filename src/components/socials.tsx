@@ -20,6 +20,7 @@ function Socials({
             window.open(link, "_blank");
           }
         }}
+        loading="lazy"
         draggable={false}
       />
       <a href={link} className="font-bold text-center" target="_blank">

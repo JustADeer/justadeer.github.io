@@ -6,6 +6,7 @@ interface WindowProps {
   onClose: () => void;
   titleText?: string;
   size?: { width: number; height: number };
+  children: React.ReactNode;
 }
 
 function Window({ onClose, titleText, size }: WindowProps) {
@@ -16,13 +17,13 @@ function Window({ onClose, titleText, size }: WindowProps) {
   return (
     <Draggable
       nodeRef={nodeRef as React.RefObject<HTMLElement>}
-      handle=".drag-hande"
+      handle=".drag-handle"
       defaultPosition={{ x: x, y: y }}
       defaultClassName="fixed inset-0 z-1"
     >
       <div
         ref={nodeRef}
-        className={`drag-hande bg-white flex flex-col items-start justify-center rounded-lg drop-shadow-lg`}
+        className={` bg-white flex flex-col items-start justify-center rounded-lg drop-shadow-lg`}
         style={{ width: size?.width, height: size?.height }}
       >
         <Header onClose={onClose} titleText={titleText} />

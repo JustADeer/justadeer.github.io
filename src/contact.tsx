@@ -21,13 +21,13 @@ function Contact({ onClose }: ContactProps) {
   return (
     <Draggable
       nodeRef={nodeRef as React.RefObject<HTMLElement>}
-      handle=".drag-hande"
+      handle=".drag-handle"
       defaultPosition={{ x: x, y: y }}
       defaultClassName="fixed inset-0"
     >
       <div
         ref={nodeRef}
-        className="drag-hande w-128 h-148 bg-white flex flex-col items-start justify-center rounded-lg drop-shadow-lg"
+        className="w-128 h-148 bg-white flex flex-col items-start justify-center rounded-lg drop-shadow-lg"
       >
         <Header onClose={onClose} titleText="contact" />
 
@@ -35,11 +35,15 @@ function Contact({ onClose }: ContactProps) {
         <div className="flex flex-col justify-center text-center text-balance-300 mx-20 ">
           <h1 className="text-2xl font-bold italic mb-2 mt-8">Funny Mails!</h1>
           <div className="align-middle">
-            This is my work email, so please dont spam the email! I dont really
-            use social media much, so this is the best way of contacting me{" "}
+            This is my work email, so please don't spam the email! I don't
+            really use social media much, so this is the best way of contacting
+            me{" "}
           </div>
           <img
-            src="\images\thicc.png"
+            src="\images\thick.webp"
+            loading="lazy"
+            draggable="false"
+            fetchPriority="low"
             className="w-48 align-middle flex my-12 self-center drop-shadow-lg hover:scale-105 transition-transform duration-250 ease-in-out"
           ></img>
           <div>

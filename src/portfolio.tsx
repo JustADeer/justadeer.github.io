@@ -15,29 +15,29 @@ function Portfolio({ onClose }: PortfolioProps) {
   return (
     <Draggable
       nodeRef={nodeRef as React.RefObject<HTMLElement>}
-      handle=".drag-hande"
+      handle=".drag-handle"
       defaultPosition={{ x: x, y: y }}
       defaultClassName="fixed inset-0 z-1"
     >
       <div
         ref={nodeRef}
-        className="drag-hande w-128 h-72 bg-white flex flex-col items-start justify-center rounded-lg drop-shadow-lg"
+        className="w-128 h-72 bg-white flex flex-col items-start justify-center rounded-lg drop-shadow-lg"
       >
         <Header onClose={onClose} titleText="portfolio" />
         <div className="grid grid-cols-3 mt-8 items-center gap-8 self-center">
           <Socials
             link="https://justadeer.itch.io/"
-            imgSrc="/images/itch.webp"
+            imgSrc="/images/itch.svg"
             titleText="Itch.io"
           />
           <Socials
             link="https://github.com/JustADeer"
-            imgSrc="/images/github.webp"
+            imgSrc="/images/github.svg"
             titleText="Github"
           />
           <Socials
             link="https://www.youtube.com/@justadeer"
-            imgSrc="/images/youtube.webp"
+            imgSrc="/images/youtube.svg"
             titleText="Youtube"
           />
         </div>
