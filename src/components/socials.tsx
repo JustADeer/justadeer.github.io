@@ -1,3 +1,6 @@
+import useSound from "use-sound";
+import clickSound from "../assets/click.wav";
+
 interface AboutProps {
   titleText?: string;
   imgSrc?: string;
@@ -5,10 +8,11 @@ interface AboutProps {
 }
 
 function Socials({
-  imgSrc = "/images/thicc/png",
+  imgSrc = "/images/thick/png",
   titleText = "untitled",
   link = "",
 }: AboutProps) {
+  const [play] = useSound(clickSound);
   return (
     <div className="flex flex-col items-center justify-center gap-2">
       <img
@@ -17,6 +21,7 @@ function Socials({
         className="max-w-16 max-h-16 min-w-16 min-h-16 drop-shadow-lg hover:scale-110 transition-transform duration-250 ease-in-out"
         onClick={() => {
           if (link) {
+            play();
             window.open(link, "_blank");
           }
         }}

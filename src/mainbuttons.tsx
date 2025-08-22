@@ -6,6 +6,34 @@ import About from "./about";
 import Contact from "./contact";
 import Portfolio from "./portfolio";
 import Faq from "./faq";
+import useIsMobile from "./components/useIsMobile";
+
+const BUTTONS = [
+  {
+    key: "about",
+    label: "about",
+    img: "/images/about.webp",
+    component: About,
+  },
+  {
+    key: "portfolio",
+    label: "portfolio",
+    img: "/images/portfolio.webp",
+    component: Portfolio,
+  },
+  {
+    key: "faq",
+    label: "faq",
+    img: "/images/faq.webp",
+    component: Faq,
+  },
+  {
+    key: "contact",
+    label: "contact",
+    img: "/images/email.webp",
+    component: Contact,
+  },
+];
 
 function MainButtons() {
   const [show, setShow] = useState({
@@ -14,7 +42,7 @@ function MainButtons() {
     portfolio: false,
     faq: false,
   });
-  const [activeComponent, setActiveComponent] = useState<string | null>(null);
+
   const [play] = useSound(clickSound);
 
   const handleToggle = (key: keyof typeof show) => {
@@ -22,123 +50,78 @@ function MainButtons() {
     setShow((prev) => ({ ...prev, [key]: !prev[key] }));
   };
 
-  const handleDragStart = (component: string) => {
-    setActiveComponent(component);
-    console.log("Dragging started for:", component);
-  };
-
   const buttonBaseClasses = `
-  m-5
-  flex
-  flex-col
-  items-center
-  text-center
-  hover:scale-110
-  transition-transform
-  duration-250
-  ease-in-out
-  cursor-pointer
+    flex
+    flex-col
+    items-center
+    hover:scale-110
+    transition-transform
+    duration-250
+    cursor-pointer
+    aspect-square
+    max-w-84
+    max-h-84
+    p-5
   `;
 
   const imageBaseClasses = `
-  w-14
-  h-14
-  max-w-14
-  max-h-14
-  mb-1
-  drop-shadow-xl
+    w-14
+    h-14
+    min-w-8
+    min-h-8
+    max-w-14
+    max-h-14
+    drop-shadow-xl
   `;
 
+  const { isMobile } = useIsMobile();
+
   return (
-    <div className="flex justify-center items-center flex-wrap p-4 ">
-      <button
-        className={buttonBaseClasses}
-        onMouseEnter={() => play()}
-        onClick={() => handleToggle("about")}
-      >
-        <img
-          src="/images/about.webp"
-          className={imageBaseClasses}
-          draggable="false"
-          alt="about"
-          loading="lazy"
-          fetchPriority="high"
-        />
-        About
-      </button>
-
-      <button
-        className={buttonBaseClasses}
-        onMouseEnter={() => play()}
-        onClick={() => handleToggle("portfolio")}
-      >
-        <img
-          src="/images/portfolio.webp"
-          className={imageBaseClasses}
-          draggable="false"
-          alt="portfolio"
-          loading="lazy"
-          fetchPriority="high"
-        ></img>
-        Portfolio
-      </button>
-
-      <button
-        className={buttonBaseClasses}
-        onMouseEnter={() => play()}
-        onClick={() => handleToggle("faq")}
-      >
-        <img
-          src="/images/faq.webp"
-          className={imageBaseClasses}
-          draggable="false"
-          alt="faq"
-          loading="lazy"
-          fetchPriority="high"
-        ></img>
-        FAQ
-      </button>
-
-      <button
-        className={buttonBaseClasses}
-        onMouseEnter={() => play()}
-        onClick={() => handleToggle("contact")}
-      >
-        <img
-          src="/images/email.webp"
-          className={imageBaseClasses}
-          draggable="false"
-          alt="email"
-          loading="lazy"
-          fetchPriority="high"
-        ></img>
-        Contact
-      </button>
-
-      {["about", "contact", "portfolio", "faq"].map((key) => {
-        const Component =
-          key === "about"
-            ? About
-            : key === "contact"
-            ? Contact
-            : key === "portfolio"
-            ? Portfolio
-            : Faq;
-        return (
-          <div
+    <div
+      className={
+        isMobile
+          ? "grid grid-cols-2 justify-center items-center"
+          : "flex flex-row justify-center items-center"
+      }
+    >
+      {BUTTONS.map(({ key, label, img }) => (
+        <div className={isMobile ? "m-4" : "m-0"} key={key}>
+          <button
             key={key}
-            onClick={() => handleDragStart(key)}
-            onFocus={() => handleDragStart(key)}
-            style={{ zIndex: activeComponent === key ? 2 : 1 }}
+            className={
+              isMobile
+                ? `${buttonBaseClasses} bg-blue-300/50 rounded-xl`
+                : buttonBaseClasses
+            }
+            onClick={() => handleToggle(key as keyof typeof show)}
+            aria-label={label}
           >
-            {show[key as keyof typeof show] && (
-              <Component
-                onClose={() => setShow((prev) => ({ ...prev, [key]: false }))}
-              />
-            )}
-          </div>
-        );
-      })}
+            <img
+              src={img}
+              className={imageBaseClasses}
+              draggable="false"
+              alt={`${label} button icon`}
+              loading="lazy"
+              fetchPriority="high"
+            />
+            {isMobile ? null : <span>{label}</span>}
+          </button>
+          {isMobile ? (
+            <span className="mt-2 flex justify-center items-center w-full font-semibold font-mono">
+              {label}
+            </span>
+          ) : null}
+        </div>
+      ))}
+
+      {BUTTONS.map(({ key, component: Component }) =>
+        show[key as keyof typeof show] ? (
+          <Component
+            key={key}
+            onClose={() => setShow((prev) => ({ ...prev, [key]: false }))}
+          />
+        ) : null
+      )}
     </div>
   );
 }

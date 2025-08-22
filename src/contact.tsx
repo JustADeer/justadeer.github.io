@@ -1,10 +1,16 @@
 import Draggable from "react-draggable";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Header from "./components/header.tsx";
+import windowPosition from "./components/global.tsx";
 
 interface ContactProps {
   onClose: () => void;
 }
+
+const defaultSize = {
+  x: 128,
+  y: 148,
+};
 
 const copyToClipboard = (text: string) => {
   navigator.clipboard.writeText(text).then(() => {
@@ -15,19 +21,31 @@ const copyToClipboard = (text: string) => {
 function Contact({ onClose }: ContactProps) {
   const nodeRef = React.useRef<HTMLDivElement>(null);
 
-  const x = window.innerWidth / 2 - 192 * 2;
-  const y = window.innerHeight / 2 - 128 * 2;
+  if (windowPosition.contact.x === 0) {
+    windowPosition.contact.x = window.innerWidth / 2 - defaultSize.x * 2;
+    windowPosition.contact.y = window.innerHeight / 2 - defaultSize.y * 2;
+  }
+
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    setVisible(true);
+  }, []);
 
   return (
     <Draggable
       nodeRef={nodeRef as React.RefObject<HTMLElement>}
       handle=".drag-handle"
-      defaultPosition={{ x: x, y: y }}
+      defaultPosition={{
+        x: windowPosition.contact.x,
+        y: windowPosition.contact.y,
+      }}
       defaultClassName="fixed inset-0"
     >
       <div
         ref={nodeRef}
-        className="w-128 h-148 bg-white flex flex-col items-start justify-center rounded-lg drop-shadow-lg"
+        className={`w-128 h-148 bg-white flex flex-col items-start justify-center duration-150 rounded-lg drop-shadow-lg transition-[scale,opacity] origin-center
+          ${visible ? "opacity-100 scale-100" : "opacity-0 scale-50"}`}
       >
         <Header onClose={onClose} titleText="contact" />
 
@@ -60,7 +78,7 @@ function Contact({ onClose }: ContactProps) {
           </div>
           or press the button below to open your email application directly.
           <button
-            className="p-2 bg-orange-300 rounded-xl border-amber-800 border-2 cursor-pointer align-middle hover:scale-110 transition-transform duration-250 ease-in-out mt-2 w-1/3 self-center"
+            className="p-2 bg-orange-300/50 rounded-xl border-orange-300/90 border-2 cursor-pointer align-middle hover:scale-110 transition-transform duration-250 ease-in-out mt-2 w-1/3 self-center select-none"
             onClick={() => window.open("mailto:shaquillesouzan3@gmail.com")}
           >
             Email Me!
