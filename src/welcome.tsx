@@ -6,7 +6,7 @@ function Welcome() {
     <span
       className={
         isMobile
-          ? "text-[55px] font-bold text-center align-middle flex flex-col items-center justify-center"
+          ? "text-[50px] font-bold text-center align-middle flex flex-col items-center justify-center"
           : "text-[65px] font-bold text-center align-middle flex flex-col items-center justify-center"
       }
     >

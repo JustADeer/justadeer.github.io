@@ -41,6 +41,7 @@ function Mainwel() {
           <MainButtons></MainButtons>
         </div>
       )}
+      <p className="absolute bottom-2 text-sm">© 2025 Souzan Shaquille</p>
     </div>
   );
 }

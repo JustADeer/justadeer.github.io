@@ -18,7 +18,7 @@ function Socials({
       <img
         src={imgSrc}
         alt={titleText}
-        className="max-w-16 max-h-16 min-w-16 min-h-16 drop-shadow-lg hover:scale-110 transition-transform duration-250 ease-in-out"
+        className="max-w-16 max-h-16 min-w-16 min-h-16 drop-shadow-lg hover:scale-110 transition-transform duration-250 ease-in-out cursor-pointer"
         onClick={() => {
           if (link) {
             play();
