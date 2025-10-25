@@ -1,15 +1,13 @@
 import Mainwel from "./mainwel.tsx";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, HashRouter } from "react-router-dom";
 
 function App() {
   return (
-    <div>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Mainwel></Mainwel>} />
-        </Routes>
-      </BrowserRouter>
-    </div>
+    <HashRouter>
+      <Routes>
+        <Route path="/" element={<Mainwel></Mainwel>} />
+      </Routes>
+    </HashRouter>
   );
 }
 
