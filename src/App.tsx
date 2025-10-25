@@ -1,5 +1,5 @@
 import Mainwel from "./mainwel.tsx";
-import { BrowserRouter, Routes, Route, HashRouter } from "react-router-dom";
+import { Routes, Route, HashRouter } from "react-router-dom";
 
 function App() {
   return (
