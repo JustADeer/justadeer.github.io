@@ -165,12 +165,18 @@ function About({ onClose }: AboutProps) {
               <br></br>・ ML and AI
               <br></br>・ Web Development
             </p>
+            <div className="font-extrabold text-3xl mb-4">AI Interest</div>
+            <p className="mb-10 text-justify">
+              I am currently learning the fundamentals for AI Research. Right
+              now I am focusing on the science side of AI (e.g., Making a model
+              to predict melting point using descriptors from RDKit, Mordred,
+              etc.). Plese do look at my projects in github.
+            </p>
             <div className="font-extrabold text-3xl mb-4">Other Interest</div>
             <p className="mb-10 text-justify">
-              Right now I am learning more about AI and ML and how to corporate
-              other languages like Rust and other low level languages into my
-              development workflow. Also researching on how the industry
-              standards on how projects are made and maintained.
+              I have a side interest in illustrating and playing music, but have
+              no time to focus on it. So I just dable here and there for the fun
+              of it.
             </p>
             <div className="font-extrabold text-3xl mb-4">
               Foreign Languages

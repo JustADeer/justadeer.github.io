@@ -62,14 +62,6 @@ function Contact({ onClose }: ContactProps) {
               really use social media much, so this is the best way of
               contacting me{" "}
             </div>
-            {/*<img
-              src="\images\thick.webp"
-              loading="lazy"
-              draggable="false"
-              fetchPriority="low"
-              className="w-48 align-middle flex my-12 self-center drop-shadow-lg hover:scale-105 transition-transform duration-250 ease-in-out"
-            ></img>
-             */}
             <div>
               <br></br>
               This is my email:{" "}
@@ -108,7 +100,7 @@ function Contact({ onClose }: ContactProps) {
     >
       <div
         ref={nodeRef}
-        className={`w-128 h-148 bg-white flex flex-col items-start justify-center duration-150 rounded-lg drop-shadow-lg transition-[scale,opacity] origin-center
+        className={`w-lg h-96 bg-white flex flex-col items-start justify-center duration-150 rounded-lg drop-shadow-lg transition-[scale,opacity] origin-center
           ${visible ? "opacity-100 scale-100" : "opacity-0 scale-50"}`}
       >
         <Header onClose={onClose} titleText="contact" />
@@ -121,13 +113,7 @@ function Contact({ onClose }: ContactProps) {
             really use social media much, so this is the best way of contacting
             me{" "}
           </div>
-          <img
-            src="\images\thick.webp"
-            loading="lazy"
-            draggable="false"
-            fetchPriority="low"
-            className="w-48 align-middle flex my-12 self-center drop-shadow-lg hover:scale-105 transition-transform duration-250 ease-in-out"
-          ></img>
+          <div className="py-4"></div>
           <div>
             This is my email:{" "}
             <span
