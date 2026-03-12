@@ -32,7 +32,7 @@ function About({ onClose }: AboutProps) {
     return (
       <div
         ref={nodeRef}
-        className={`fixed left-0 right-0 bottom-0 z-50 w-full h-[80vh] max-h-[90vh] bg-white rounded-t-2xl drop-shadow-2xl transform transition-all duration-300 ease-in-out
+        className={`fixed left-0 right-0 bottom-0 z-50 w-full h-[80vh] max-h-[90vh] bg-base-100 rounded-t-2xl shadow-2xl transform transition-all duration-300 ease-in-out
           ${
             visible ? "translate-y-0 opacity-100" : "translate-y-full opacity-0"
           }`}
@@ -63,20 +63,20 @@ function About({ onClose }: AboutProps) {
             </div>
 
             <div className="text-center mt-4">
-              <div className="text-4xl text-blue-300 font-semibold">
+              <div className="text-4xl text-primary font-semibold">
                 Souzan Shaquille
               </div>
               <div className="text-2xl font-mono tracking-tighter">
                 ソウザン
               </div>
-              <div className="text-xl text-black mt-4">
+              <div className="text-xl text-base-content mt-4">
                 Developer, Illustrator, Student
               </div>
             </div>
 
             <div className="w-full my-4 border-t opacity-20" />
 
-            <div className="text-black/80 text-xl space-y-4 px-2">
+            <div className="text-base-content/80 text-xl space-y-4 px-2">
               <p>
                 Hi I'm Souzan, I do...
                 <br />・ Game Development
@@ -95,7 +95,7 @@ function About({ onClose }: AboutProps) {
               <div className="font-extrabold text-2xl">Foreign Languages</div>
               <p>
                 I have quite advanced english level maybe around a{" "}
-                <span className="text-blue-300">C1 </span>
+                <span className="text-primary">C1 </span>
                 level of proficiency. I can express myself fluently and
                 spontaneously without much obvious searching for expressions.
                 I'm comfortable discussing complex subjects, understanding
@@ -104,8 +104,8 @@ function About({ onClose }: AboutProps) {
                 <br />
                 <br />I am also interested in learning new languages. I
                 currently learning Japanese. Trying to get to{" "}
-                <span className="text-red-500">N4</span> level of fluency. After
-                I reach that level I will try to learn Korean and Chinese.
+                <span className="text-error">N4</span> level of fluency. After I
+                reach that level I will try to learn Korean and Chinese.
               </p>
             </div>
           </div>
@@ -123,7 +123,7 @@ function About({ onClose }: AboutProps) {
     >
       <div
         ref={nodeRef}
-        className={`w-192 h-128 bg-white flex flex-col items-start justify-center duration-150 rounded-lg drop-shadow-lg transition-[scale,opacity] origin-center
+        className={`w-3xl h-128 bg-base-100 flex flex-col items-start justify-center duration-150 rounded-lg shadow-xl transition-[scale,opacity] origin-center
           ${visible ? "opacity-100 scale-100" : "opacity-0 scale-50"}`}
       >
         <Header onClose={onClose} titleText="about" />
@@ -144,10 +144,10 @@ function About({ onClose }: AboutProps) {
               fetchPriority="high"
             />
           </div>
-          <span className="ml-8 text-blue-300 text-5xl">
+          <span className="ml-8 text-primary text-5xl">
             Souzan Shaquille
             <div className="text-lg font-mono tracking-tighter">ソウザン</div>
-            <div className="text-lg text-black mt-4">
+            <div className="text-lg text-base-content mt-4">
               Developer, Illustrator, Student
             </div>
           </span>
@@ -157,7 +157,7 @@ function About({ onClose }: AboutProps) {
         <div className="w-5/6 mb-4 mt-8 border-t-2 opacity-20 flex mx-15" />
 
         {/*Paragraph*/}
-        <div className="overflow-y-scroll text-black/70 text-xl">
+        <div className="overflow-y-scroll text-base-content/70 text-xl">
           <div className=" mx-10 pb-10">
             <p className=" text-wrap max-w-2xl min-w-2xl static pb-10">
               Hi I'm Souzan, I do...
@@ -183,7 +183,7 @@ function About({ onClose }: AboutProps) {
             </div>
             <p className="text-justify">
               I have quite advanced english level maybe around a{" "}
-              <span className="text-blue-300">C1 </span>
+              <span className="text-primary">C1 </span>
               level of proficiency. I can express myself fluently and
               spontaneously without much obvious searching for expressions. I'm
               comfortable discussing complex subjects, understanding nuanced
@@ -192,7 +192,7 @@ function About({ onClose }: AboutProps) {
               <br />
               <br />I am also interested in learning new languages. I currently
               learning Japanese. Trying to get to{" "}
-              <span className="text-red-500">N4</span> level of fluency. After I
+              <span className="text-error">N4</span> level of fluency. After I
               reach that level I will try to learn Korean and Chinese.
               <br />
             </p>

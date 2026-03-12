@@ -38,7 +38,7 @@ function Contact({ onClose }: ContactProps) {
     return (
       <div
         ref={nodeRef}
-        className={`fixed left-0 right-0 bottom-0 z-50 w-full h-[55vh] max-h-[90vh] bg-white rounded-t-2xl drop-shadow-2xl transform transition-all duration-300 ease-in-out
+        className={`fixed left-0 right-0 bottom-0 z-50 w-full h-[55vh] max-h-[90vh] bg-base-100 rounded-t-2xl shadow-2xl transform transition-all duration-300 ease-in-out
           ${
             visible ? "translate-y-0 opacity-100" : "translate-y-full opacity-0"
           }`}
@@ -50,10 +50,10 @@ function Contact({ onClose }: ContactProps) {
             visible ? "scale-y-100" : "scale-y-50"
           }`}
         >
-          <Header onClose={onClose} titleText="about" />
+          <Header onClose={onClose} titleText="contact" />
           <div className="py-4" />
           {/*Paragraph*/}
-          <div className="flex flex-col justify-center text-center text-balance-300 mx-4 text-2xl">
+          <div className="flex flex-col justify-center text-center text-base-content mx-4 text-2xl">
             <h1 className="text-4xl font-bold italic mb-2 mt-8">
               Funny Mails!
             </h1>
@@ -77,7 +77,7 @@ function Contact({ onClose }: ContactProps) {
             </div>
             or press the button below to open your email application directly.
             <button
-              className="p-2 bg-orange-300/50 rounded-xl border-orange-300/90 border-2 cursor-pointer align-middle hover:scale-110 transition-transform duration-250 ease-in-out mt-2 w-1/3 self-center select-none"
+              className="btn btn-warning mt-2"
               onClick={() => window.open("mailto:shaquillesouzan3@gmail.com")}
             >
               Email Me!
@@ -100,13 +100,13 @@ function Contact({ onClose }: ContactProps) {
     >
       <div
         ref={nodeRef}
-        className={`w-lg h-96 bg-white flex flex-col items-start justify-center duration-150 rounded-lg drop-shadow-lg transition-[scale,opacity] origin-center
+        className={`w-lg h-96 bg-base-100 flex flex-col items-start justify-center duration-150 rounded-lg shadow-xl transition-[scale,opacity] origin-center
           ${visible ? "opacity-100 scale-100" : "opacity-0 scale-50"}`}
       >
         <Header onClose={onClose} titleText="contact" />
 
-        {/*Paragraph*/}
-        <div className="flex flex-col justify-center text-center text-balance-300 mx-20 ">
+          {/*Paragraph*/}
+          <div className="flex flex-col justify-center text-center text-base-content mx-20 ">
           <h1 className="text-2xl font-bold italic mb-2 mt-8">Funny Mails!</h1>
           <div className="align-middle">
             This is my work email, so please don't spam the email! I don't
@@ -128,7 +128,7 @@ function Contact({ onClose }: ContactProps) {
           </div>
           or press the button below to open your email application directly.
           <button
-            className="p-2 bg-orange-300/50 rounded-xl border-orange-300/90 border-2 cursor-pointer align-middle hover:scale-110 transition-transform duration-250 ease-in-out mt-2 w-1/3 self-center select-none"
+            className="btn btn-warning mt-2"
             onClick={() => window.open("mailto:shaquillesouzan3@gmail.com")}
           >
             Email Me!

@@ -32,7 +32,7 @@ function Portfolio({ onClose }: PortfolioProps) {
     return (
       <div
         ref={nodeRef}
-        className={`fixed left-0 right-0 bottom-0 z-50 w-full h-[35vh] max-h-[90vh] bg-white rounded-t-2xl drop-shadow-2xl transform transition-all duration-300 ease-in-out
+        className={`fixed left-0 right-0 bottom-0 z-50 w-full h-[35vh] max-h-[90vh] bg-base-100 rounded-t-2xl shadow-2xl transform transition-all duration-300 ease-in-out
           ${
             visible ? "translate-y-0 opacity-100" : "translate-y-full opacity-0"
           }`}
@@ -44,7 +44,7 @@ function Portfolio({ onClose }: PortfolioProps) {
             visible ? "scale-y-100" : "scale-y-50"
           }`}
         >
-          <Header onClose={onClose} titleText="about" />
+          <Header onClose={onClose} titleText="portfolio" />
           <div className="py-4" />
           <div className="grid grid-cols-3 mt-8 items-center gap-8 self-center mx-16">
             <Socials
@@ -95,7 +95,7 @@ function Portfolio({ onClose }: PortfolioProps) {
     >
       <div
         ref={nodeRef}
-        className={`w-128 h-96 bg-white flex flex-col items-start justify-center duration 150 rounded-lg drop-shadow-lg transition-[scale,opacity] origin-center
+        className={`w-lg h-96 bg-base-100 flex flex-col items-start justify-center duration 150 rounded-lg shadow-xl transition-[scale,opacity] origin-center
           ${visible ? "opacity-100 scale-100" : "opacity-0 scale-50"}`}
       >
         <Header onClose={onClose} titleText="portfolio" />

@@ -34,15 +34,15 @@ function Header({ onClose, titleText = "untitled" }: AboutProps) {
     // 4. Attach the ref to the div element
     <div
       ref={headerRef}
-      className="drag-handle absolute top-0 w-full bg-gray-700 rounded-t-lg flex items-center justify-between px-2 z-10"
+      className="drag-handle absolute top-0 w-full bg-base-200 rounded-t-lg flex items-center justify-between px-2 z-10"
     >
-      <span className=" text-white text-2xl font-mono">{titleText}</span>
+      <span className="text-base-content text-2xl font-mono">{titleText}</span>
       <button
-        className="cursor-pointer flex items-center mb-1.5"
+        className="btn btn-sm btn-circle btn-ghost"
         onClick={handleClose}
       >
-        <span className="text-pink-200 text-2xl hover:scale-110 active:scale-80 duration-100 mr-2">
-          [ x ]
+        <span className="text-base-content text-xl">
+          ✕
         </span>
       </button>
     </div>

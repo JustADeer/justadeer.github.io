@@ -14,10 +14,10 @@ const defaultSize = {
 };
 
 const detailBaseClass = `
-font-bold text-xl my-2 cursor-pointer border-2 p-2 bg-orange-300/50 select-none
+collapse collapse-arrow bg-base-200 text-base-content rounded-box mb-2
 `;
 
-const divBaseClass = `ml-8 transition-all duration-300 ease-out text-justify mt-2 mb-4`;
+const divBaseClass = `collapse-content text-base-content`;
 
 function Faq({ onClose }: FaqProps) {
   const { isMobile } = useIsMobile();
@@ -37,7 +37,7 @@ function Faq({ onClose }: FaqProps) {
     return (
       <div
         ref={nodeRef}
-        className={`fixed left-0 right-0 bottom-0 z-50 w-full h-[50vh] max-h-[90vh] bg-white rounded-t-2xl drop-shadow-2xl transform transition-all duration-300 ease-in-out
+        className={`fixed left-0 right-0 bottom-0 z-50 w-full h-[50vh] max-h-[90vh] bg-base-100 rounded-t-2xl shadow-2xl transform transition-all duration-300 ease-in-out
           ${
             visible ? "translate-y-0 opacity-100" : "translate-y-full opacity-0"
           }`}
@@ -49,46 +49,49 @@ function Faq({ onClose }: FaqProps) {
             visible ? "scale-y-100" : "scale-y-50"
           }`}
         >
-          <Header onClose={onClose} titleText="about" />
+          <Header onClose={onClose} titleText="faq" />
           <div className="pt-4" />
 
-          <div className="lowercase font-mono text-balance-300 text-black/70 text-xl w-full overflow-y-scroll mt-10">
-            <div className="mx-20 mt-10 items-start">
-              <details>
-                <summary className={detailBaseClass}>Who are you?</summary>
+          <div className="lowercase font-mono text-base-content text-xl w-full overflow-y-scroll mt-10 px-4">
+            <div className="mt-10 items-start">
+              <div className={detailBaseClass}>
+                <input type="checkbox" />
+                <div className="collapse-title font-bold">Who are you?</div>
                 <div className={divBaseClass}>
-                  I'm a student in college learning about{" "}
-                  <span className="text-blue-400">Mechatronics</span> right now!
+                  I'm a student in college learning about Mechatronics right
+                  now!
                 </div>
-              </details>
+              </div>
 
-              <details>
-                <summary className={detailBaseClass}>
+              <div className={detailBaseClass}>
+                <input type="checkbox" />
+                <div className="collapse-title font-bold">
                   What are your hobbies?
-                </summary>
+                </div>
                 <div className={divBaseClass}>
                   I love learning new things, for example, I'm currently
                   learning about machine learning and AI.
                 </div>
-              </details>
+              </div>
 
-              <details>
-                <summary className={detailBaseClass}>
+              <div className={detailBaseClass}>
+                <input type="checkbox" />
+                <div className="collapse-title font-bold">
                   How long have you been coding?
-                </summary>
+                </div>
                 <div className={divBaseClass}>
                   I've been coding since I was in middle school, so it's been
                   around 4 years now. Back then I started with coding games in{" "}
                   <a
                     href="https://godotengine.org/"
-                    className="text-blue-400"
+                    className="text-primary"
                     target="_blank"
                   >
                     Godot Engine
                   </a>
                   , and now I am learning about web development.
                 </div>
-              </details>
+              </div>
             </div>
           </div>
         </div>
@@ -105,48 +108,50 @@ function Faq({ onClose }: FaqProps) {
     >
       <div
         ref={nodeRef}
-        className={`w-192 h-128 bg-white flex flex-col items-start duration-150 rounded-lg drop-shadow-lg transition-[scale,opacity] origin-center
+        className={`w-3xl h-128 bg-base-100 flex flex-col items-start duration-150 rounded-lg shadow-xl transition-[scale,opacity] origin-center
           ${visible ? "opacity-100 scale-100" : "opacity-0 scale-50"}`}
       >
         <Header onClose={onClose} titleText="faq" />
 
-        <div className="lowercase font-mono text-balance-300 text-black/70 text-xl w-full overflow-y-scroll mt-10">
-          <div className="mx-20 mt-10 items-start">
-            <details>
-              <summary className={detailBaseClass}>Who are you?</summary>
+        <div className="lowercase font-mono text-base-content text-xl w-full overflow-y-scroll mt-10 px-4">
+          <div className="mt-10 items-start">
+            <div className={detailBaseClass}>
+              <input type="checkbox" />
+              <div className="collapse-title font-bold">Who are you?</div>
               <div className={divBaseClass}>
-                I'm a student in college learning about{" "}
-                <span className="text-blue-400">Mechatronics</span> right now!
+                I'm a student in college learning about Mechatronics right now!
               </div>
-            </details>
+            </div>
 
-            <details>
-              <summary className={detailBaseClass}>
+            <div className={detailBaseClass}>
+              <input type="checkbox" />
+              <div className="collapse-title font-bold">
                 What are your hobbies?
-              </summary>
+              </div>
               <div className={divBaseClass}>
                 I love learning new things, for example, I'm currently learning
                 about machine learning and AI.
               </div>
-            </details>
+            </div>
 
-            <details>
-              <summary className={detailBaseClass}>
+            <div className={detailBaseClass}>
+              <input type="checkbox" />
+              <div className="collapse-title font-bold">
                 How long have you been coding?
-              </summary>
+              </div>
               <div className={divBaseClass}>
                 I've been coding since I was in middle school, so it's been
                 around 4 years now. Back then I started with coding games in{" "}
                 <a
                   href="https://godotengine.org/"
-                  className="text-blue-400"
+                  className="text-primary"
                   target="_blank"
                 >
                   Godot Engine
                 </a>
                 , and now I am learning about web development.
               </div>
-            </details>
+            </div>
           </div>
         </div>
       </div>

@@ -51,27 +51,18 @@ function MainButtons() {
   };
 
   const buttonBaseClasses = `
-    flex
-    flex-col
-    items-center
+    btn-ghost
+    flex flex-col items-center justify-center gap-1
     hover:scale-110
     transition-transform
     duration-250
-    cursor-pointer
-    aspect-square
-    max-w-84
-    max-h-84
-    p-5
+    w-24 h-24
+    rounded-xl
   `;
 
   const imageBaseClasses = `
     w-14
     h-14
-    min-w-8
-    min-h-8
-    max-w-14
-    max-h-14
-    drop-shadow-xl
   `;
 
   const { isMobile } = useIsMobile();
@@ -88,11 +79,7 @@ function MainButtons() {
         <div className={isMobile ? "m-4" : "m-0"} key={key}>
           <button
             key={key}
-            className={
-              isMobile
-                ? `${buttonBaseClasses} bg-blue-300/50 rounded-xl`
-                : buttonBaseClasses
-            }
+            className={`${buttonBaseClasses} ${isMobile ? 'bg-base-200' : ''}`}
             onClick={() => handleToggle(key as keyof typeof show)}
             aria-label={label}
           >
