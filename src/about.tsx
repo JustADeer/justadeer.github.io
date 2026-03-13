@@ -63,9 +63,7 @@ function About({ onClose }: AboutProps) {
             </div>
 
             <div className="text-center mt-4">
-              <div className="text-4xl text-primary font-semibold">
-                Souzan Shaquille
-              </div>
+              <div className="text-4xl text-primary font-semibold">Souzan</div>
               <div className="text-2xl font-mono tracking-tighter">
                 ソウザン
               </div>

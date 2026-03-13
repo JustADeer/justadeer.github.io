@@ -33,7 +33,7 @@ function Socials({
           draggable={false}
         />
       </button>
-      <a href={link} className="font-bold text-center" target="_blank">
+      <a href={link} className="text-center pt-2 font-mono" target="_blank">
         {titleText}
       </a>
     </div>
